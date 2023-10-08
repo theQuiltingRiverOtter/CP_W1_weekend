@@ -14,12 +14,12 @@ describe("Tests creditCheck() for valid credit card number", () => {
 
 describe("Tests creditCheck() for invalid credit card number", () => {
   test('creditCheck("5541801923795240") is invalid number', () => {
-    expect(creditCheck("5541801923795240")).toBeFalsey();
+    expect(creditCheck("5541801923795240")).toBeFalsy();
   });
   test('creditCheck("4024007106512380") is invalid number', () => {
-    expect(creditCheck("4024007106512380")).toBeFalsey();
+    expect(creditCheck("4024007106512380")).toBeFalsy();
   });
   test('creditCheck("6011797668868728") is invalid number', () => {
-    expect(creditCheck("6011797668868728")).toBeFalsey();
+    expect(creditCheck("6011797668868728")).toBeFalsy();
   });
 });

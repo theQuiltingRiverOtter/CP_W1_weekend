@@ -22,8 +22,14 @@ const creditCheck = function (str) {
       }
     })
     .reduce((a, b) => a + b);
-  return digits % 2 == 0;
+  if (digits % 10 == 0) {
+    console.log("The number is valid!");
+    return true;
+  } else {
+    console.log("The number is invalid!");
+    return false;
+  }
 };
 
-console.log(creditCheck("5541801923795240"));
+console.log(creditCheck("4024007106512380"));
 module.exports = { creditCheck };
