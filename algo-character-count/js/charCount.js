@@ -1,3 +1,3 @@
-exports.charCount = function() {
+const charCount = function () {};
 
-};
+module.exports = { charCount };
