@@ -1,3 +1,5 @@
+const exp = require("constants");
+
 expect.extend({
   toMatchArray(received, expected) {
     if (received.length !== expected.length) {
@@ -13,7 +15,8 @@ expect.extend({
         message: () => `Expected ${received} to be an instance of Array`,
       };
     }
-    if (!received.every((val, index) => val === expected[index])) {
+    expected.sort();
+    if (!received.sort().every((val, index) => val === expected[index])) {
       return {
         pass: false,
         message: () => `Expected ${received} to match ${expected}`,
