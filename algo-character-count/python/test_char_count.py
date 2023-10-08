@@ -6,7 +6,7 @@ import pytest
     "test_string, result_list",
     [
         ("", []),
-        ("aaabbbc", [["a", 3], ["b", 2], ["c", 1]]),
+        ("aaabbc", [["a", 3], ["b", 2], ["c", 1]]),
         (
             "an apple a day will keep the doctor away",
             [
