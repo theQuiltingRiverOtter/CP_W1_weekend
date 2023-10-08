@@ -1,6 +1,15 @@
 const { creditCheck } = require("./creditCheck");
 
 describe("Tests creditCheck() for valid credit card number", () => {
+  beforeEach(() => {
+    return (consoleSpy = jest.spyOn(global.console, "log"));
+  });
+  afterEach(() => {
+    expect(consoleSpy).toHaveBeenCalled();
+    expect(consoleSpy).toHaveBeenCalledWith("The number is valid!");
+    expect(consoleSpy.mock.calls).toContainEqual(["The number is valid!"]);
+    consoleSpy.mockRestore();
+  });
   test('creditCheck("5541808923795240") is valid number', () => {
     expect(creditCheck("5541808923795240")).toBeTruthy();
   });
@@ -13,6 +22,15 @@ describe("Tests creditCheck() for valid credit card number", () => {
 });
 
 describe("Tests creditCheck() for invalid credit card number", () => {
+  beforeEach(() => {
+    return (consoleSpy = jest.spyOn(global.console, "log"));
+  });
+  afterEach(() => {
+    expect(consoleSpy).toHaveBeenCalled();
+    expect(consoleSpy).toHaveBeenCalledWith("The number is invalid!");
+    expect(consoleSpy.mock.calls).toContainEqual(["The number is invalid!"]);
+    consoleSpy.mockRestore();
+  });
   test('creditCheck("5541801923795240") is invalid number', () => {
     expect(creditCheck("5541801923795240")).toBeFalsy();
   });

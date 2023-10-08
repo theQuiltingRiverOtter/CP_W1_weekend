@@ -31,5 +31,4 @@ const creditCheck = function (str) {
   }
 };
 
-console.log(creditCheck("4024007106512380"));
 module.exports = { creditCheck };
