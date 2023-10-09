@@ -1,5 +1,3 @@
-const sumPairs = function () {
-  return "unable to find pairs";
-};
+const sumPairs = function (input_array, target_value) {};
 
 module.exports = { sumPairs };
