@@ -4,6 +4,20 @@ describe("Tests pad() without a default pad value", () => {
   test("Test pad([1,2,3],5) to return [1,2,3,null,null]", () => {
     expect(pad([1, 2, 3], 5)).toMatchArray([1, 2, 3, null, null]);
   });
+  test("Test pad([5,10,'hi','no',true],10) to return [5,10,'hi','no',true,null,null,null,null,null]", () => {
+    expect(pad([5, 10, "hi", "no", true], 10)).toMatchArray([
+      5,
+      10,
+      "hi",
+      "no",
+      true,
+      null,
+      null,
+      null,
+      null,
+      null,
+    ]);
+  });
 });
 
 describe("Tests pad() without a default pad value and a min size smaller than the array passed in", () => {
