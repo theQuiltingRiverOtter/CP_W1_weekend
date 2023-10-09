@@ -1,3 +1,3 @@
-exports.sumPairs = function() {
+const sumPairs = function () {};
 
-};
+module.exports = { sumPairs };

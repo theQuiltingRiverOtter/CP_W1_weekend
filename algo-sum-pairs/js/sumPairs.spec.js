@@ -1,0 +1,1 @@
+const { sumPairs } = require("./sumPairs");
