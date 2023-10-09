@@ -11,9 +11,19 @@ expect.extend({
       return {
         pass: false,
         message: () =>
-          `Expected: ${received} ro have length of ${expected.length} but it has a length of ${received.length}`,
+          `Expected: ${received} to have length of ${expected.length} but it has a length of ${received.length}`,
       };
     }
-    return received.every((elem, ind) => elem == expected[ind]);
+    if (received.every((elem, ind) => elem == expected[ind])) {
+      return {
+        pass: true,
+        message: () => `Expected ${recieved} to not match ${expected}`,
+      };
+    } else {
+      return {
+        pass: false,
+        message: () => `Expected ${recieved} to match ${expected}`,
+      };
+    }
   },
 });
