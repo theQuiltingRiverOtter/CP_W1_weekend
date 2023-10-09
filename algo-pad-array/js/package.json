@@ -1,5 +1,17 @@
 {
   "dependencies": {
     "shallow-equal": "^3.1.0"
-  }
+  },
+  "name": "pad-array",
+  "version": "1.0.0",
+  "main": "padArray.js",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Megan Buck thequiltingriverotter@gmail.com",
+  "license": "ISC",
+  "description": ""
 }
