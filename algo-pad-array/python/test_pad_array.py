@@ -10,7 +10,7 @@ import pytest
         ([5, 8, 0, 10], 0, [5, 8, 0, 10]),
     ],
 )
-def test_pad(recieved_list, min_size, expected):
+def test_pad_without_default(recieved_list, min_size, expected):
     assert pad(recieved_list, min_size) == expected
 
 
