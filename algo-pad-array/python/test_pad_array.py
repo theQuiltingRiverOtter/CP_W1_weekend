@@ -27,6 +27,7 @@ def test_pad_without_default(recieved_list, min_size, expected):
             ["hi", "bye", "there", "here", "where", "which", "which", "which"],
         ),
         ([53, 32, 5], -100, "hullabaloo", [53, 32, 5]),
+        ([5, 2], 3, [55, 55, 55], [5, 2, [55, 55, 55]]),
     ],
 )
 def test_pad(recieved_list, min_size, pad_value, expected):
