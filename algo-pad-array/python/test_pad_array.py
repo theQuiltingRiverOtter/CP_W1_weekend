@@ -1,5 +1,31 @@
 from pad_array import pad
+import pytest
 
 
-def test_pad():
-    assert pad([1, 2, 3], 5) == [1, 2, 3, None, None]
+@pytest.mark.parametrize(
+    "recieved_list, min_size, expected",
+    [
+        ([1, 2, 3], 5, [1, 2, 3, None, None]),
+        ([1, 2, 3], 3, [1, 2, 3]),
+        ([5, 8, 0, 10], 0, [5, 8, 0, 10]),
+    ],
+)
+def test_pad(recieved_list, min_size, expected):
+    assert pad(recieved_list, min_size) == expected
+
+
+@pytest.mark.parametrize(
+    "recieved_list, min_size, pad_value, expected",
+    [
+        ([1, 2, 3], 5, "apple", [1, 2, 3, "apple", "apple"]),
+        ([5, 8, 0, 10], 10, 2, [5, 8, 0, 10, 2, 2, 2, 2, 2, 2]),
+        (
+            ["hi", "bye", "there", "here", "where"],
+            8,
+            "which",
+            ["hi", "bye", "there", "here", "where", "which", "which", "which"],
+        ),
+    ],
+)
+def test_pad(recieved_list, min_size, pad_value, expected):
+    assert pad(recieved_list, min_size, pad_value) == expected
