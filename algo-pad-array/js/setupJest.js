@@ -17,12 +17,12 @@ expect.extend({
     if (received.every((elem, ind) => elem == expected[ind])) {
       return {
         pass: true,
-        message: () => `Expected ${recieved} to not match ${expected}`,
+        message: () => `Expected ${received} to not match ${expected}`,
       };
     } else {
       return {
         pass: false,
-        message: () => `Expected ${recieved} to match ${expected}`,
+        message: () => `Expected ${received} to match ${expected}`,
       };
     }
   },
