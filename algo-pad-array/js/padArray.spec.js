@@ -24,7 +24,7 @@ describe("Tests pad() without a default pad value and a min size smaller than th
   });
 });
 
-describe("Tests pad() for a default value", () => {
+describe("Tests pad() for a pased in value", () => {
   test("Test pad([1,2,3],5,'apple') to return [1,2,3,'apple','apple']", () => {
     expect(pad([1, 2, 3], 5, "apple")).toMatchArray([
       1,
