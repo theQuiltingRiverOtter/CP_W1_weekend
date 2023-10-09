@@ -37,6 +37,12 @@ expect.extend({
             pass: false,
             message: () => `Expected ${elem} to equal ${expected[i][ind]}`,
           };
+        } else {
+          return {
+            pass: true,
+            message: () =>
+              `Expected ${received[i]} to not match ${expected[i]}`,
+          };
         }
       }
       if (typeof received[i] === "object" && received[i] !== null) {
@@ -58,6 +64,10 @@ expect.extend({
             };
           }
         }
+        return {
+          pass: true,
+          message: () => `Expected ${received[i]} to not match ${expected[i]}`,
+        };
       } else {
         return {
           pass: true,

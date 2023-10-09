@@ -49,3 +49,42 @@ describe("Tests pad() for a pased in value", () => {
     ]);
   });
 });
+
+describe("Tests pad() when passing in an array as a pad value", () => {
+  test("Test pad([[3,2],[5,6]],3,[8,9]) to return [[3,2],[5,6],[8,9]]", () => {
+    expect(
+      pad(
+        [
+          [3, 2],
+          [5, 6],
+        ],
+        3,
+        [8, 9]
+      )
+    ).toDeeplyMatchArray([
+      [3, 2],
+      [5, 6],
+      [8, 9],
+    ]);
+  });
+
+  test("Test pad([1,3,5],5,[8,0]) to return [1,3,5,[8,0],[8,0]]", () => {
+    expect(pad([1, 3, 5], 5, [8, 0])).toDeeplyMatchArray([
+      1,
+      3,
+      5,
+      [8, 0],
+      [8, 0],
+    ]);
+  });
+});
+
+describe("Tests pad() when passing in an object as a pad value", () => {
+  test("Test pad([5,8],3,{name:'Tom',age:32}) to return [5,8,{name:'Tom', age:32}]", () => {
+    expect(pad([5, 8], 3, { name: "Tom", age: 32 })).toDeeplyMatchArray([
+      5,
+      8,
+      { name: "Tom", age: 32 },
+    ]);
+  });
+});
